@@ -1,5 +1,6 @@
 from django.shortcuts import render
-
+import datetime
+from django.db import models
 
 # функции - вьюхи - контроллеры
 def index(request):
@@ -60,6 +61,7 @@ def test_context(request):
             {'name': 'Синяя куртка', 'price': '23 550,00'},
             {'name': 'Коричневый спортивный топ', 'price': '7 500,00'},
         ],
+        'datetime': datetime.datetime.now(),
         'promotion': False,
         'product_promotion': [
             {'name': 'Черный рюкзак Nike Heritage', 'price': '2 340,00'},

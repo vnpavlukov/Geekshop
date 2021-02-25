@@ -8,7 +8,7 @@
 <h1>{{ header }}</h1>
 <p>{{ username }}</p>
 {% for product in products %}
-    <h5>{{ product.name }}</h5>
+    <h5>{{ product.name }}{% load tz %}</h5>
     <p>{{ product.price }} руб.</p>
 {% endfor %}
 
@@ -18,5 +18,6 @@
         <p style="color: red;">{{ product.price }} руб.</p>
     {% endfor %}
 {% endif %}
+{{ datetime }}
 </body>
 </html>
