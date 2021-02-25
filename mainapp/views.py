@@ -1,14 +1,5 @@
 from django.shortcuts import render
 import datetime
-import json
-from os import path
-
-products_file_name = path.join('fixtures', f"data_products.json")
-
-
-def get_data_from_json_file(file_name):
-    with open(file_name, encoding="utf8") as file:
-        return json.load(file)
 
 
 # функции - вьюхи - контроллеры
