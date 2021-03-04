@@ -5,6 +5,9 @@ class ProductCategory(models.Model):
     name = models.CharField(max_length=40, unique=True)
     description = models.TextField(blank=True)  # blank=True field can be empty
 
+    class Meta:
+        verbose_name_plural = 'Product Categories'
+
     def __str__(self):
         return self.name
 
