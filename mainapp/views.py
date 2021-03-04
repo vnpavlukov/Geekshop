@@ -6,11 +6,6 @@ import datetime
 products_file_name = os.path.join(os.path.dirname(__file__), 'fixtures/data_products.json')
 
 
-def get_data_from_json(filename):
-    with open(filename, encoding='utf8') as f:
-        return json.load(f)
-
-
 # функции - вьюхи - контроллеры
 def index(request):
     context = {'title': 'Geekshop',
@@ -25,7 +20,7 @@ def index(request):
 def products(request):
     context = {'title': 'Geekshop - Каталог',
                'buy_button_name': 'Отправить в корзину',
-               'products': get_data_from_json(products_file_name),
+               'products': json.load(open(products_file_name, encoding='utf8')),
                }
     return render(request, 'mainapp/products.html', context)
 
