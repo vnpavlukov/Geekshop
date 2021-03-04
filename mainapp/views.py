@@ -3,6 +3,8 @@ import json
 from django.shortcuts import render
 import datetime
 
+from mainapp.models import ProductCategory, Product
+
 products_file_name = os.path.join(os.path.dirname(__file__), 'fixtures/data_products.json')
 
 
@@ -20,7 +22,9 @@ def index(request):
 def products(request):
     context = {'title': 'Geekshop - Каталог',
                'buy_button_name': 'Отправить в корзину',
-               'products': json.load(open(products_file_name, encoding='utf8')),
+               # 'products': json.load(open(products_file_name, encoding='utf8')),
+               'products': Product.objects.all(),
+               'categories': ProductCategory.objects.all()
                }
     return render(request, 'mainapp/products.html', context)
 
