@@ -17,11 +17,12 @@ def index(request):
     return render(request, 'mainapp/index.html', context)
 
 
-def products(request):
-    context = {'title': 'Geekshop - Каталог',
-               'buy_button_name': 'Отправить в корзину',
-               # 'products': json.load(open(products_file_name, encoding='utf8')),
-               'products': Product.objects.all(),
-               'categories': ProductCategory.objects.all()
-               }
+def products(request, id=None):
+    context = {
+        'title': 'Geekshop - Каталог',
+        'buy_button_name': 'Отправить в корзину',
+        # 'products': json.load(open(products_file_name, encoding='utf8')),
+        'products': Product.objects.all(),
+        'categories': ProductCategory.objects.all()
+    }
     return render(request, 'mainapp/products.html', context)
