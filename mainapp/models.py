@@ -24,4 +24,4 @@ class Product(models.Model):
     # PROTECT нельзя удалить категорию если есть хоть один продукт
 
     def __str__(self):
-        return f'{self.name} | {self.category.name}'''
+        return f'{self.name} | {self.category.name}'

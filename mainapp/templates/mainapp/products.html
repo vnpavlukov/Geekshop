@@ -15,7 +15,7 @@
             <h1 class="my-4">GeekShop</h1>
             <div class="list-group">
                 {% for category in categories %}
-                    <a href="#" class="list-group-item">{{ category.name }}</a>
+                <a href="#" class="list-group-item">{{ category.name }}</a>
                 {% endfor %}
             </div>
 
@@ -72,8 +72,13 @@
                             <p class="card-text">{{ product.short_description|capfirst }}</p>
                         </div>
                         <div class="card-footer text-center">
-                            <button type="button" class="btn btn-outline-success">{{ buy_button_name|capfirst }}
-                            </button>
+
+                            <a href="{% url 'basket:basket_add' product.id %}">
+                                <button type="button" class="btn btn-outline-success">{{ buy_button_name|capfirst }}
+                                </button>
+                            </a>
+
+
                         </div>
                     </div>
                 </div>
