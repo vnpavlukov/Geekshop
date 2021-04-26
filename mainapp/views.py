@@ -3,11 +3,13 @@ from django.shortcuts import render
 
 # функции - вьюхи - контроллеры
 def index(request):
-    return render(request, 'mainapp/index.html')
+    context = {'title': 'GeekShop'}
+    return render(request, 'mainapp/index.html', context)
 
 
 def products(request):
-    return render(request, 'mainapp/products.html')
+    context = {'title': 'GeekShop - каталог'}
+    return render(request, 'mainapp/products.html', context)
 
 
 def test_context(request):
